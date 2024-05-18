@@ -6,10 +6,13 @@
   <p><strong>Category:</strong> <%= @restaurant.category %></p>
 
   <h4>Reviews</h4>
-  <%= link_to  'New Review',new_restaurant_review_path(@restaurant), class: "btn btn-primary"  %>
+
   <ul class="list-group">
     <% @restaurant.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %></li>
     <% end %>
   </ul>
+  <h1>New Review</h1>
+  <%= render 'reviews/form', review: @review, restaurant: @restaurant %>
+
 </div>
